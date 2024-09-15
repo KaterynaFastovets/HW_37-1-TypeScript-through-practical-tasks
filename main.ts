@@ -114,16 +114,16 @@ namespace UserProfile {
     email: string;
   }
 
-  function generateId(id: string): string {
-    return Math.random().toString(16).slice(2);
-  }
+  const generateId = () => `${Math.random().toString(16).slice(2)}`.replace('.','')
 
-  export function createProfile(name: string, email: string): ProfileInterface {
-    return {
-      id: "",
-      name,
-      email,
-    };
+  let id = generateId()
+
+  export function createProfile( name: string, email: string): ProfileInterface {
+  return {
+    id,
+    name,
+    email,
+  }
   }
 }
 

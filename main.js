@@ -92,12 +92,11 @@ console.log(calculator.multiply(3, 4)); // 1
  */
 var UserProfile;
 (function (UserProfile) {
-    function generateId(id) {
-        return Math.random().toString(16).slice(2);
-    }
+    const generateId = () => `${Math.random().toString(16).slice(2)}`.replace('.', '');
+    let id = generateId();
     function createProfile(name, email) {
         return {
-            id: "",
+            id,
             name,
             email,
         };
